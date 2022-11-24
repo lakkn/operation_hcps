@@ -1,6 +1,9 @@
 import './App.css';
 import React, {useEffect, useState, useMemo, useCallback } from 'react';
 import CountUp from 'react-countup';
+import useWindowSize from 'react-use/lib/useWindowSize'
+import Confetti from 'react-confetti';
+
 
 import {
     BrowserRouter as Router,
@@ -26,7 +29,7 @@ function App() {
 }
 
 function Home() {
-
+    const {width, height} = useWindowSize();
     const [mode, setMode] = useState('write');
     const [count, setCount] = useState('read');
 
@@ -53,10 +56,14 @@ function Home() {
 
     return (
         <div className="h-all">
+            <Confetti width={width - 50} height={height - 50} recycle={false} numberOfPieces={200}/>
+            <div className="h-visit-container">
             <div>visits</div>
             <div className="h-visits">
                 <CountUp end={count} duration={5} useEasing={true} />
             </div>
+            </div>
+            <div className="h-title">Welcome HCPS</div>
         </div>
     );
 }

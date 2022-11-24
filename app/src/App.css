@@ -6,12 +6,24 @@
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    width: 100%;
-    justify-content: center;
+    width: 100vw;
     font-size: 40px;
+    max-width: 100vw;
+}
+
+.h-visit-container{
+    padding-top: 50px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .h-visits{
     font-size: 50px;
     font-family: 'Inconsolata', monospace;
+}
+
+.h-title{
+    font-size: 90px;
 }
